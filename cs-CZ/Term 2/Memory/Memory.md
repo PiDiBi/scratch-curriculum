@@ -1,44 +1,44 @@
 ---
-title: Memory
+title: Paměť
 level: Scratch 2
-language: en-GB
+language: cs-CZ
 stylesheet: scratch
 embeds: "*.png"
 materials: ["Club Leader Resources/*"]
 ...
 
-## Community Contributed Project { .challenge .pdf-hidden }
-This project was created with Erik and his daughter Ruth. If you'd like to contribute a project of your own, then [get in touch with us on Github](https://github.com/CodeClub).
+## Komunitní projekt { .challenge .pdf-hidden }
+Tento projekt byl vytvořen Erikem a jeho dcerou Ruth. Pokud chcete také přispět vlastním projektem potom můžete na [Githubu](https://github.com/CodeClub).
 
-# Introduction { .intro }
+# Úvod { .intro }
 
-In this project, you will create a memory game where you have to memorise and repeat a sequence of random colours!
+V tomto projektu se naučíš jak vytovořit hru na cvičení paměťi, budeš se snažit zapamatovat si a zopakovat sekvenci náhodných barev!
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/34874510/?autostart=false" frameborder="0"></iframe>
   <img src="colour-final.png">
 </div>
 
-# Step 1: Random colours { .activity }
+# Krok 1: Náhodné barvy { .activity }
 
-First, let's create a character that can change to a random sequence of colours for the player to memorise.
+Jako první vytvoříme psotavu, která bude meěnit barvy v náhodné sekvenci a hráč si je zkusí zapamatovat.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
-+ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Vytvoř si nový projekt a smaž kočičku, takže tvůj projekt bude prázdný. Online editor můžeš nalézt zde: <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
 
-+ Choose a character and a backdrop. Your character doesn't have to be a person, but it needs to be able to show different colours.
++ Vyber si postavu a pozadí. Tvoje postava nemusí být člověk, ale musí umožňovat měnit a ukazovat různé barvy.
 
 	![screenshot](colour-sprite.png)
 
-+ In your game, you'll use a different number to represent each colour:
++ Ve hře použiješ různá čísla pro reprezentaci každé barvy:
 
-	+ 1 = red;
-	+ 2 = blue;
-	+ 3 = green;
-	+ 4 = yellow.
+	+ 1 = červená;
+	+ 2 = modrá;
+	+ 3 = zelená;
+	+ 4 = žlutá.
 
-	Give your character 4 different colour costumes, one for each of the 4 colours above. Make sure that your coloured costumes are in the right order.
+	Vytvoř postavě 4 kostýmy, každý v jedné barvě. Ujisti se, že jsou barevné kostýmy ve správném pořadí.
 
 	![screenshot](colour-costume.png)
 
@@ -71,11 +71,11 @@ Can you make a different drum sound play depending on the random number chosen? 
 
 ## Save your project { .save }
 
-# Step 2: Repeating the sequence { .activity }
+# Krok 2: Repeating the sequence { .activity }
 
 Let's add 4 buttons, for the player to repeat the sequence they've remembered.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
 + Add 4 sprites to your project, that will become buttons. Edit your 4 sprites, so that there's 1 for each of the 4 colours.
 
@@ -128,11 +128,11 @@ Remember to test the code you've added! Can you memorise a sequence of 5 colours
 
 ## Save your project { .save }
 
-# Step 3: Multiple levels { .activity .new-page }
+# Krok 3: Multiple levels { .activity .new-page }
 
 So far, the player only has to remember 5 colours. Let's improve your game, so that the length of the sequence increases.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
 + Create a new variable called `score` {.blockdata}.
 
@@ -179,11 +179,11 @@ So far, the player only has to remember 5 colours. Let's improve your game, so t
 
 ## Save your project { .save }
 
-# Step 4: High score { .activity }
+# Krok 4: High score { .activity }
 
 Let's save the high score, so that you can play against your friends.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
 + Add 2 new variables to your project, called `high score` {.blockdata} and `name` {.blockdata}.
 

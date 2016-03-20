@@ -81,14 +81,14 @@ Přidej 4 tlačítka, kterýmí hráč zopakuje sekvenci barev, kterou si zapama
 
 	![screenshot](colour-drums.png)
 
-+ Pokud klikneš na červený buben, je potřeba poslat zprávu postavě, a dát j vědět, že bylo stisknuto toto 'tlačítko'. Přidej k červenému bubnu tetno kód:
++ Pokud klikneš na červený buben, je potřeba poslat zprávu postavě, a dát jí vědět, že bylo stisknuto toto 'tlačítko'. Přidej k červenému bubnu tetno kód:
 
 	```blocks
 		po kliknutí na mě
 		rozešli všem [cervena v]
 	```
 
-+ Když postava dostane tuto zprávu, podíváme se jestli na začatku seznamu je červená - říslo 1. Pokud ano, tak ji odstraníme ze seznamu, pokud ne, tak je konec hry!
++ Když postava dostane tuto zprávu, podíváme se jestli na začatku seznamu je červená - číslo 1. Pokud ano, tak ji odstraníme ze seznamu, pokud ne, tak je konec hry!
 
 	```blocks
 		po obdržení zprávy [red v]
@@ -103,11 +103,11 @@ Přidej 4 tlačítka, kterýmí hráč zopakuje sekvenci barev, kterou si zapama
 + Jakmile je list prázdný zobraz blikající světla, to znamená, že si hráč zapamatoval vše správně. Přidej tento kód do  kódu tvé postavy nakonec bloku `po kliknutí na ⚑` {.blockevents}:
 
 	```blocks
-		čekej dokud nenastatne < (délka [seznam v]) = [0]>
+		čekej dokud nenastane <(délka [seznam v]) = [0]>
 		rozešli všem [vyhra v] a čekej
 	```
 
-+ Klikni na scénu a přidej tento kód, který změní barvu pozadí, když gráč vyhraje:
++ Klikni na scénu a přidej tento kód, který změní barvu pozadí, když hráč vyhraje:
 
 	```blocks
 		po obdržení zprávy [vyhra v]
@@ -134,11 +134,11 @@ Doteď si hráč musel zapamatovat jen 5 barev. Vylepši hru tak, aby se délka 
 
 ## Seznam úkolů { .check }
 
-+ Vytovř novou proměnnou nazvanou `score` {.blockdata}.
++ Vytvoř novou proměnnou nazvanou `score` {.blockdata}.
 
 	![screenshot](colour-score.png)
 
-+ Toto `score` {.blockdata} bude použito pro rozhodování, kolik barev si má hráč zapamatovat. Na začátek ho nastavíme na 3. Přidej tent kód k tvé postavě na začátek bloku `po kliknutí na ⚑` {.blockevents}:
++ Toto `score` {.blockdata} bude použito pro rozhodování, kolik barev si má hráč zapamatovat. Na začátek ho nastavíme na 3. Přidej tento kód k tvé postavě na začátek bloku `po kliknutí na ⚑` {.blockevents}:
 
 	```blocks
 		nastav [score v] na [3]
@@ -157,7 +157,7 @@ Doteď si hráč musel zapamatovat jen 5 barev. Vylepši hru tak, aby se délka 
 		změň [score v] o (1)
 	```
 
-+ Nakonec, musíš přidat smyčku `opakuj dokola` {.blockcontrol} kolem sekvence kódu na generování seznamu, tak aby se pro každou úroveň vytvořila nová sekvence. Takto by měl vypadat kód postavy:
++ Nakonec, musíš přidat smyčku `opakuj dokola` {.blockcontrol} kolem sekvence kódu na generování seznamu tak, aby se pro každou úroveň vytvořila nová sekvence. Takto by měl vypadat kód postavy:
 
 	```blocks
 		po kliknutí na ⚑
@@ -190,63 +190,70 @@ Ukládej nejvyšší skóre, abyste mohli s kamarády hrát proti sobě.
 + If ever the game ends (by pressing the wrong button), you need to check whether the player's score is higher than the current high score. If it is, you need to save the score as the high score, and store the name of the player. Here's how your red button should look:
 
 	```blocks
-		po obdržení zprávy [red v]
-		if <(item (1 v) of [seznam v])=[1]> then
-			delete (1 v) of [seznam v]
-		else
-			say [Game over!] for (1) secs
-			if < (score) > (high score) > then
-				set [high score v] to (score)
-				ask [High score! What is your name?] a čekej
-				set [name v] to (answer)
+		po obdržení zprávy [cervena v]
+		když <(prvek (1 v) z [seznam v])=[1]> tak
+			zruš (1 v) z [seznam v]
+		jinak
+			říkej [Konec hry!] příštích (1) sekund
+			když < (score) > (high score) > tak
+				nastav [high score v] na (score)
+				ptej se [Nejvyšší skóre! Jak se jmenuješ?] a čekej
+				nastav [name v] na (answer)
 			end
 			zastav [vše v]
-		end
+		end		
 	```
 
-+ You'll need to add this new code to the other 3 buttons too! Have you noticed that the 'Game over' code in each of the 4 buttons is exactly the same?
++ Tento kód mus´š přidat do všech tlačítek! Všiml sis, že je kód pro konec hry všude stejný?
 
 	![screenshot](colour-same.png)
 
-+ If ever you need to change any of this code, such as adding a sound or changing the 'Game over!' message, you'd have to change it 4 times! That could get annoying, and waste a lot of time.
++ Pokud bys potřeboval něco změnit, například zprávu 'Konec hry!', musíš to udělat 4x! To zabere spustu času a je to zbytečné.
 
-	Instead, you can define your own blocks, and reuse them in your project! To do this, click `more blocks` {.blockmoreblocks}, and then 'Make a block'. Call this new block 'Game over'.
+	Místo toho si můžeš definovat vlastní bloky a používat je znova ve svém projektu. Abys to udělal klikni na `Bloky` {.blockmoreblocks} a pak na 'Vytvořit blok'. Nazvi tento nový blok 'Konec hry'.
 
 	![screenshot](colour-more.png)
 
-+ Add the code from the `else` {.blockcontrol} block from the red button to the new block that appears:
++ Přesun blok z bloku `jinak` {.blockcontrol} pro červené tlačítko do nového bloku, který se objeví:
 
-	![screenshot](colour-make-block.png)
+	blok Konec hry	
+    říkej [Konec hry!] příštích (1) sekund
+    když < (score) > (high score) > tak
+        nastav [high score v] na (score)
+        ptej se [Nejvyšší skóre! Jak se jmenuješ?] a čekej
+        nastav [name v] na (answer)
+    end
+    zastav [vše v]
 
-+ You've now made a new _function_ called `Game over` {.blockmoreblocks}, which you can use anywhere you like. Drag your new `Game over` {.blockmoreblocks} block onto the 4 scripts for the buttons.
++ Nyní jsi vytvořil novou funkci_ nazvanou `Konec hry` {.blockmoreblocks}, kterou můžeš použít kdekoliv chceš. Přesuň blok `Konec hry` {.blockmoreblocks} do všech 4 tlačítek.
 
 	![screenshot](colour-use-block.png)
 
-+ Now add a sound for when the wrong button is pressed. You only need to add this code _once_ in the `Game over` {.blockmoreblocks} block that you made, and not 4 separate times!
++ Nyní přidej zvuk, když hráč udělá chybu. Tentokrát stačí jen _jendou_ do bloku `Konec hry` {.blockmoreblocks} který jsi vytvořil(a) a ne 4x!
 
 	![screenshot](colour-cough.png)
 
-## Výzva: Making more blocks {.challenge}
-Do you notice any other code that is the same for all 4 buttons?
+## Výzva: Tvorba více bloků {.challenge}
+Všiml(a) sis ještě nějakého kódu, který se opakuje pro všechny 4 tlačítka?
 
 ![screenshot](colour-more-blocks.png)
 
-Can you make another custom block, that is used by each button?
+Zkusíš udělat dalši blok, který by šel všude použít?
 
 ## Ulož projekt { .save }
 
-## Výzva: Another costume {.challenge}
-Have you noticed that your game starts with your character showing one of the 4 colours, and that they always display the last colour in the sequence while the player is repeating the sequence?
+## Výzva: Další kostým {.challenge}
+Všiml(a) sis, že hra začíná ukazuje, když má hráč hádat poslední barvu?
 
-Can you add another plain white costume to your character, which is displayed at the start of your game, and when the player is trying to copy the sequence?
+Přidej bílý kostým a zobraz ho na začátku hry a když má hráč hádat.
 
 ![screenshot](colour-white.png)
 
 ## Ulož projekt { .save }
 
-## Výzva: Difficulty level {.challenge}
-Can you allow your player to choose between 'easy mode' (using just the red and blue drums) and 'normal mode' (which uses all 4 drums)?
+## Výzva: Úroveň obtížnosti {.challenge}
+Zkus hráče nechat rozhodnout, jestli bude hrát 'lehkou úroveň' (jen červený a modrý buben) nebo 'normální úroveň' (všechny 4 bubny)?
 
-You could even add a 'hard' mode, which makes use of a 5th drum!
+Můžeš taky přidat 'těžkou úroveň', která přidá pátý buben!
 
 ## Ulož projekt { .save }

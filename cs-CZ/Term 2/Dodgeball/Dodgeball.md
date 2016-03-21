@@ -39,14 +39,14 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 + Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým:
 
 	```blocks
-		po kliknutí na ⚑
-		opakuj dokola
-			když <klávesa [šipka vpravo v] stisknuta?> tak
-				natoč se směrem (90 v)
-				posuň se o (3) kroků
-				další kostým
-			end
-		end
+        po kliknutí na ⚑
+        opakuj dokola
+            když <klávesa [šipka vpravo v] stisknuta?> tak
+                natoč se směrem (90 v)
+                posuň se o (3) kroků
+                další kostým
+            end
+        end
 	```
 
 + Otestuj postavu kliknutím na zelenou vlakku a tak, že podržíš šipku doprava. Pohybuje se doprava a vypadá to jako že chodí?

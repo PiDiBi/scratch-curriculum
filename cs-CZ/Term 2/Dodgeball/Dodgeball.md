@@ -1,5 +1,5 @@
 ---
-title: Dodgeball
+title: Uhýbání balónům
 level: Scratch 2
 language: en-GB
 stylesheet: scratch
@@ -9,159 +9,159 @@ materials: ["Club Leader Resources/*","Project Resources/*"]
 
 # Introduction { .intro }
 
-In this project you'll learn how to create a platform game, in which you have to dodge the moving balls and reach the end of the level.
+V tomto projektu se naučíš, jak vytovřit plošinovou hru, ve které se musíě vyhnout pohybujícím balónům a dosáhnout konce každé úrovně.
 
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/39740618/?autostart=false" frameborder="0"></iframe>
   <img src="dodge-final.png">
 </div>
 
-# Step 1: Character movement { .activity }
+# Krok 1: Character movement { .activity }
 
-Let's start by creating a character that can move left and right, as well as climb up poles.
+Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt nahoru po stožárech.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
-+ Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
++ Vytvoř si nový projekt a smaž kočičku, takže tvůj projekt bude prázdný. Online editor můžeš nalézt zde: <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.
 
-+ For this project, you should have a 'Project Resources' folder, containing the background image you'll need. Make sure that you can find this folder, and ask your club leader if you can't find it.
++ Pro tento projekt potřebuješ adresář 'Project Resources',který obsahuje potřebné pozadí pro hru. Ujsiti se, že tento adresář máš, případně se na něj zeptej vedoucího klubu.
 
 	![screenshot](dodge-resources.png)
 
-+ Add the image 'background.png' as a new stage backdrop, or draw your own! If you're drawing your own level, just make sure that the poles and the floors are different colours, and that there's a door (or something similar) that your player has to reach. Here's how your project should look:
++ Přidej obrázek 'background.png' jako nové pozadí scény nebo si nakresli vlastní! Pokud si kreslíš vlastní, ujisti se, že mají stožáry a podlaha jinou barvu a že existují nějaké dveře, či něco podobného, co má hráč jako cíl k dosažení. Takto by měl vypadat tvůj projekt:
 
 	![screenshot](dodge-background.png)
 
-+ Add a new sprite, which will be your character. It's better if you choose a sprite with multiple costumes, so that you can make it look as though it's walking.
++ Přidej novou postavu, se ktterou budeš hrát. Vyber postavu s více kostýmy, tak aby se dala animovat chůze.
 
 	![screenshot](dodge-characters.png)
 
-+ Let's use the arrow keys to move your character around. When the player presses the right arrow, you want your character to point right, move a few steps and change to the next costume:
++ POužij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se psotava otočit doprava, pohnout a změnit kostým:
 
 	```blocks
-		when flag clicked
-		forever
-			if <key [right arrow v] pressed? > then
-				point in direction (90 v)
-				move (3) steps
-				next costume
+		po kliknutí na ⚑
+		opakuj dokola
+			když <klávesa [šipka vpravo v] stisknuta? > tak
+				natoč se směrem (90 v)
+				posuň se o (3) kroků
+				další kostým
 			end
 		end
 	```
 
-+ Test out your character by clicking the flag and then holding down the right arrow key. Does your player move to the right? Does your character look like they are walking?
++ Otestuj postavu kliknutím na zelenou vlakku a tak, že podržíš šipku doprava. Pohybuje se doprava a vypadá to jako že chodí?
 
 	![screenshot](dodge-walking.png)
 
-+ To move your character to the left, you'll need to add another `if` {.blockcontrol} block inside your `forever` {.blockcontrol} loop, which moves your character to the left. Remember to test your new code, to make sure that it works!
++ Aby se tvoje postava pohybovala doleva, přidej další blok `když` {.blockcontrol} do smyčky `opakuj dokola` {.blockcontrol}, který bude posouvat postavu doleva. Nezapomeň otestovat tvůj nový kód!
 
-+ To climb a pole, your character should move up slightly whenever the up arrow is pressed and they're touching the correct colour. Add this code inside your character's `forever` {.blockcontrol} loop:
++ Pro lezení na stožáry musí být splněna podmínka, že je stisknut šipka nahoru a tvoje postava se dotýká správné barvy. přidej tento kód do smyčky `opakuj dokola` {.blockcontrol}:
 
 	```blocks
-		if < <key [up arrow v] pressed?> and <touching color [#FFFF00]?> > then
-			change y by (4)
+		když < <klávesa [šipka nahoru v] stisknuta?> a <dotýká se barvy [#FFFF00]?> > tak
+			změň y o (4)
 		end
 	```
 
-+ Test your character - can you climb the yellow poles and get to the end of your level?
++ Vyzkoušej svoji postavu - může šplhat po žlutých stožárech a dostat se tak o úroveň výš?
 
 	![screenshot](dodge-test-character.png)
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-## Challenge: Completing the level {.challenge}
-Can you add more code to your character, so that they say something `if` {.blockcontrol} they get to the brown door?
+## Výzva: Ukončení úrovněl {.challenge}
+Zvládneš přidat kód k postavě, tak aby něco řekla `když` {.blockcontrol} se dostane k hnědým dveřím?
 
 ![screenshot](dodge-win.png)
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-# Step 2: Gravity and jumping { .activity }
+# Krok 2: Gravitace a skákání { .activity }
 
-Let's make your character move more realistically, by adding gravity and allowing them to jump.
+Pojď upravit tvoji postavičku tak, aby byla více realistická přidáním gravitace a možnosti skákání.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
-+ You may have noticed that your character can walk off a platform into mid-air. Try to walk off of a platform and see what happens.
++ Určitě sis všiml(a), že postavička může chodit mimo plošinu do vzduchu. Zkus to a podívej se co se dějě.
 
 	![screenshot](dodge-no-gravity.png)
 
-+ To fix this, let's add gravity to your game. Create a new variable called `gravity` {.blockdata}. You can hide this variable from your stage if you want to.
++ Pro opravu musíš přidat do hry gravitaci. Vytvoř proměnnou nazvanou `gravitace` {.blockdata}. Skryj ji ze scény, pokud chceš.
 
 	![screenshot](dodge-gravity.png)
 
-+ Add this new code block, which sets the gravity to a negative number, and then uses this to repeatedly change your character's y-coordinate.
++ Přidej tento nový kód, který nastaví gravitaci na záporné číslo a pak ji použije na změnu y pozice tvé postavy.
 
 	```blocks
-		when flag clicked
-		set [gravity v] to [-4]
-		forever
-			change y by (gravity)
+		po kliknutí na ⚑
+		nastav[gravitace v] na [-4]
+		opakuj dokola
+			změň y o (gravitace)
 		end
 	```
 
-+ Click the flag, and then drag your character to the top of the stage. What happens? Does the gravity work as you expected?
++ Klikni na vlajku a přetáhni postavu nahoru na scéně. Co se stane? Funguje gravitace, tak jak jsi čekal(a)?
 
 	![screenshot](dodge-gravity-drag.png)
 
-+ Gravity shouldn't move your character through a platform or a pole! Add an `if` {.blockcontrol} block to your code, so that the gravity only works when your character is in mid-air. The gravity code should now look like this:
++ Gravitace nesmí hýbat postavou skrz plošinu nebo stožáry! Přidej blok `když` {.blockcontrol} tak, aby gravitace fungovala jen když je postava ve vzduchu:
 
 	```blocks
-		when flag clicked
+		po kliknutí na ⚑
 		set [gravity v] to [-4]
-		forever
-			if < not < <touching color [#0000FF]?> or <touching color [#FFFF00]?> > > then
-				change y by (gravity)
+		opakuj dokola
+			když < není < <dotýká se barvy [#0000FF]?> nebo <dotýká se barvy [#FFFF00]?> > > tak
+				změn y o (gravitace)
 			end
 		end
 	```
 
-+ Test the gravity again. Does your character stop when they are on a platform or a pole? Can you walk off the edge of platforms to the level below?
++ Vyzkošej znova gravitaci. Zastaví se postava na plošině nebo stožáru? Může se dostat přes hranu plošiny o úroveň níže?
 
 	![screenshot](dodge-gravity-test.png)
 
-+  Let's also make your character jump when the player presses the space bar. One very easy way to do this is to move your character up a few times, using this code:
++  Uprav postavu tak, aby skákala když hráč stiskne mezerník:
 
 	```blocks
-		when [space v] key pressed
-		repeat (10)
-			change y by (4)
+		po stisku klávesy [mezerník v]
+		opakuj (10)
+			změň y o (4)
 		end
 	```
 
-	As gravity is constantly pushing your character down by 4 pixels, you need to choose a number greater than 4 in your `change y by (4)` {.blockmotion} block. Change this number until you're happy with the height your character jumps.
+	Protože gravitace tlačí postavu stále dolů o 4 pixely, musíš zvolit číslo větší než 4 v bloku `změň y o (4)` {.blockmotion}. Měń to číslo tak dlouho, dokud nejsi spokojen(ý) s výškou skoku.
 
-+ If you test out this code, you'll notice that it works, but the movement isn't very smooth. To make jumping look smoother, you'll need to move your character by smaller and smaller amounts, until they're not jumping anymore.
++ Když vyzkouší svůj kód, tak si všimneš, že skákání není moc plynulé. Proto se musí postava posouvat o stále menší číslo, dokud nepřestane skákat.
 
-+ To do this, create another variable called `jump height` {.blockdata}. Again, you can hide this variable if you prefer.
++ Vytvoř proměnnou `vyska skoku` {.blockdata}. Opět můžeš skrýt tuto proměnnou, pokud chceš.
 
-+ Delete the jumping code you added to your character, and replace it with this code:
++ Smaž skákací kód a nahraď ho následujícím:
 
 	```blocks
-		when [space v] key pressed
-		set [jump height v] to [8]
-		repeat until < (jump height) = [0] >
-			change y by (jump height)
-			change [jump height v] by (-0.5)
+		po stisku klávesy [mezerník v]
+		nastav [vyska skoku v] na [8]
+		opakuj dokud nenastane < (vyska skoku) = [0] >
+			změń y o (vyska skoku)
+			změń [vyska skoku v] o (-0.5)
 		end
 	```
 
-	This code moves your character up by 8 pixels, then 7.5 pixels, then 7 pixels, and so on, until your character has finished jumping. This makes jumping look much smoother.
+	Tento kód posune postavu o 8 pixelů, potom o 7.5 pixelů, potom o 7 pixelů atd. dokud postava nedokončí skok.
 
-+ Change the starting value of your `jump height` {.blockdata} variable and test it until you're happy with the height your character jumps.
++ Měň výchozí hodnotu proměnné `vyska skoku` {.blockdata} a testuj dokud nejsi spokojený(á).
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-## Challenge: Improved jumping {.challenge}
-Your character is able to jump whenever the spacebar is pressed, even if they're already in mid-air. You can test this by just holding down the spacebar. Can you fix this, so that your character can only jump `if` {.blockcontrol} they're touching a blue platform?
+## Výzva: Improved jumping {.challenge}
+Postava může vyskočit, kdykoliv je stiknut mezerník, i když je ve vzduchu. Vyzkoušej to tak, že během pádu z plošiny podržíš mezerník. Múžeš to opravit tak, že postava může skákat jen `když` {.blockcontrol} se dotýka plošiny?
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-# Step 3: Dodging balls { .activity .new-page}
+# Krok 3: Uhýbání balónům { .activity .new-page}
 
 Now that you've got your character moving around, let's add some balls for your character to avoid.
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
 + Create a new ball sprite. You can choose any type of ball you like.
 
@@ -206,9 +206,9 @@ Now that you've got your character moving around, let's add some balls for your 
 
 + Test out your character and see if they go back to the start when they've been hit by a ball.
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-## Challenge: Random balls {.challenge}
+## Výzva: Random balls {.challenge}
 The balls your character has to dodge all look the same, and always appear every 3 seconds. Can you improve them, so that they:
 
 + don't all look the same?
@@ -217,13 +217,13 @@ The balls your character has to dodge all look the same, and always appear every
 
 ![screenshot](dodge-ball-random.png)
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-# Step 4: Lasers! { .activity .new-page}
+# Krok 4: Lasers! { .activity .new-page}
 
 Let's make your game a little harder to complete, by adding lasers!
 
-## Activity Checklist { .check }
+## Seznam úkolů { .check }
 
 + Add a new sprite to your game, called 'Laser'. It should have 2 costumes, called 'on' and 'off'.
 
@@ -236,7 +236,7 @@ Let's make your game a little harder to complete, by adding lasers!
 + Add code to your laser, to make it switch between the 2 costumes.
 
 	```blocks
-		when flag clicked
+		po kliknutí na ⚑
 		forever
 			switch costume to [on v]
 			wait (2) secs
@@ -253,7 +253,7 @@ Let's make your game a little harder to complete, by adding lasers!
 
 + Test out your game to see if you can get past the laser. Change the `wait` {.blockcontrol} times in your code if the lasers are too easy or too hard.
 
-## Challenge: More obstacles {.challenge}
+## Výzva: More obstacles {.challenge}
 If you think your game is still too easy, you can add more obstacles to your level. You can add anything you like, but here are some ideas:
 
 + A flying killer butterfly;
@@ -272,9 +272,9 @@ You could even create more than one backdrop, and move to the next level when yo
 	end
 ```
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-## Challenge: Improved gravity {.challenge}
+## Výzva: Improved gravity {.challenge}
 There's one other small bug in your game: gravity doesn't pull your character downwards if _any_ part of it is touching a blue platform - even it's head! You can test this out by climbing most of the way up a pole and then moving to the left.
 
 ![screenshot](dodge-gravity-bug.png)
@@ -297,13 +297,13 @@ with:
 
 Remember to test your improvements to make sure you've fixed the bug!
 
-## Save your project { .save }
+## Ulož projekt { .save }
 
-## Challenge: More lives {.challenge}
+## Výzva: More lives {.challenge}
 Can you give your player 3 `lives` {.blockdata}, instead of just sending them back to the beginning each time? Here's how your game could work:
 
 + Your player starts with 3 lives;
 + Whenever your player gets hit, one life is lost and they go back to the start;
 + If there are no lives left, the game ends.
 
-## Save your project { .save }
+## Ulož projekt { .save }

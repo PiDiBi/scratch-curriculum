@@ -36,12 +36,12 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 
 	![screenshot](dodge-characters.png)
 
-+ POužij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se psotava otočit doprava, pohnout a změnit kostým:
++ Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým:
 
 	```blocks
 		po kliknutí na ⚑
 		opakuj dokola
-			když <klávesa [šipka vpravo v] stisknuta? > tak
+			když <klávesa [šipka vpravo v] stisknuta?> tak
 				natoč se směrem (90 v)
 				posuň se o (3) kroků
 				další kostým
@@ -94,7 +94,7 @@ Pojď upravit tvoji postavičku tak, aby byla více realistická přidáním gra
 
 	```blocks
 		po kliknutí na ⚑
-		nastav[gravitace v] na [-4]
+		nastav [gravitace v] na [-4]
 		opakuj dokola
 			změň y o (gravitace)
 		end
@@ -108,7 +108,7 @@ Pojď upravit tvoji postavičku tak, aby byla více realistická přidáním gra
 
 	```blocks
 		po kliknutí na ⚑
-		set [gravity v] to [-4]
+		nastav [gravitace v] na [-4]
 		opakuj dokola
 			když < není < <dotýká se barvy [#0000FF]?> nebo <dotýká se barvy [#FFFF00]?> > > tak
 				změn y o (gravitace)

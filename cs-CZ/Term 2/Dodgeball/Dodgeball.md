@@ -16,7 +16,7 @@ V tomto projektu se naučíš, jak vytovřit plošinovou hru, ve které se musí
   <img src="dodge-final.png">
 </div>
 
-# Krok 1: Character movement { .activity }
+# Krok 1: Pohyb postavy { .activity }
 
 Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt nahoru po stožárech.
 
@@ -36,18 +36,9 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 
 	![screenshot](dodge-characters.png)
 
-+ Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým:
++ Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým: 
 
-	```blocks
-        po kliknutí na ⚑
-        opakuj dokola
-            když <klávesa [šipka vpravo v] stisknuta?> tak
-                natoč se směrem (90 v)
-                posuň se o (3) kroků
-                další kostým
-            end
-        end
-	```
+
 
 + Otestuj postavu kliknutím na zelenou vlakku a tak, že podržíš šipku doprava. Pohybuje se doprava a vypadá to jako že chodí?
 

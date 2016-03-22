@@ -48,6 +48,17 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 			end
 		end
 	```
+    
+    ```blocks
+		when flag clicked
+        po kliknutí na ⚑
+		forever
+			if <key [right arrow v] pressed? > then
+				point in direction (90 v)
+				move (3) steps
+				next costume
+			end
+		
 
 + Otestuj postavu kliknutím na zelenou vlakku a tak, že podržíš šipku doprava. Pohybuje se doprava a vypadá to jako že chodí?
 

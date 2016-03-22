@@ -1,7 +1,7 @@
 ---
 title: Uhýbání balónům
 level: Scratch 2
-language: en-GB
+language: cs-CZ
 stylesheet: scratch
 embeds: "*.png"
 materials: ["Club Leader Resources/*","Project Resources/*"]
@@ -37,16 +37,7 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 	![screenshot](dodge-characters.png)
 
 + Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým: 
-	```blocks
-		po kliknutí na ⚑
-		forever
-			if <key [right arrow v] pressed? > then
-				point in direction (90 v)
-				move (3) steps
-				next costume
-			end
-		end
-	``` 
+	
 	```blocks
 		po kliknutí na ⚑
 		opakuj dokola

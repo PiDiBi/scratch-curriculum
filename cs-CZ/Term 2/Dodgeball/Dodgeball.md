@@ -38,7 +38,7 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 
 + Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým: 
 	```blocks
-		when flag clicked
+		po kliknutí na ⚑
 		forever
 			if <key [right arrow v] pressed? > then
 				point in direction (90 v)

@@ -37,7 +37,16 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 	![screenshot](dodge-characters.png)
 
 + Použij šipky pro ovládání postavy. Pokud hráč stiskne šipku doprava, měla by se postava otočit doprava, pohnout a změnit kostým: 
-
+	```blocks
+		when flag clicked
+		forever
+			if <key [right arrow v] pressed? > then
+				point in direction (90 v)
+				move (3) steps
+				next costume
+			end
+		end
+	``` 
 	```blocks
 		po kliknutí na ⚑
 		opakuj dokola

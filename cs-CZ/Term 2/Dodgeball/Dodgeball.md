@@ -175,7 +175,7 @@ Nyní, když máš postavu, která se pohybuje, přidej nějaké balóny, který
 
 	![screenshot](dodge-ball-motion.png)
 
-	Tento kód vytvoří kopii balónu každé tři vteřiny. Každý klon přesune na horní plošinu.
+	Tento kód vytvoří kopii balónu každé tři vteřiny. Každý klon přesune nad horní plošinu.
 
 + Klikni na vlajku a vyzkoušej to.
 
@@ -196,7 +196,7 @@ Nyní, když máš postavu, která se pohybuje, přidej nějaké balóny, který
 		end
 	```
 
-+ Ke postavě musíš přidat kód, který ji přesune po zásahu balónem na začátek:
++ K postavě musíš přidat kód, který ji přesune po zásahu balónem na začátek:
 
 	```blocks
 		po obdržení zprávy [hit v]
@@ -204,7 +204,7 @@ Nyní, když máš postavu, která se pohybuje, přidej nějaké balóny, který
 		skoč na pozici x: (-210) y: (-120)
 	```	
 
-+ Otestuj postavičku a vyzkoušej jestli se po zásahu balónem dostane zpět na začátek.
++ Otestuj postavičku a vyzkoušej, jestli se po zásahu balónem dostane zpět na začátek.
 
 ## Ulož projekt { .save }
 
@@ -233,7 +233,7 @@ Udělejme hru těžší přidáním lejzrů!
 
 	![screenshot](dodge-lasers-position.png)
 
-+ Přidej k laseru kód, který bude kostýmy přepínat.
++ Přidej k lejzru kód, který bude kostýmy přepínat.
 
 	```blocks
 		po kliknutí na ⚑
@@ -247,7 +247,7 @@ Udělejme hru těžší přidáním lejzrů!
 
 	Pokud chceš, můžeš `čekat` {.blockcontrol} `náhodné` {.blockoperators} množství času, mezi změnami kostýmu.
 
-+ Nakonec přidej lejzru kód, která pošle zprávu 'hit', když zasáhne hráče. Toto bude stejný kód, jako je u balónu.
++ Nakonec přidej lejzru kód, která pošle zprávu 'hit', když zasáhne hráče. Ten bude stejný, jako je u balónu.
 
 	K postavě není třeba dávat žádný kód, ta už ví, jak se chovat, když je zasažena!
 
@@ -274,36 +274,36 @@ Navíc múžeš vytvořit více pozadí a přesunout hráče do další úrovně
 
 ## Ulož projekt { .save }
 
-## Výzva: Improved gravity {.challenge}
-There's one other small bug in your game: gravity doesn't pull your character downwards if _any_ part of it is touching a blue platform - even it's head! You can test this out by climbing most of the way up a pole and then moving to the left.
+## Výzva: Vylepšená gravitace {.challenge}
+Ve hře je jedna malá chyba: gravitace nestáhne postavu dolů když se _jakákoliv_ část dotýká modré plošiny - i když je to hlava! Otestovat to můžeš tak, že vyšplháš po stožáru skoro nahoru a pak se posuneš do strany.
 
 ![screenshot](dodge-gravity-bug.png)
 
-Can you fix this bug? To do this, you need to give your character different coloured trousers (on _all_ costumes)...
+Zkusíš to opravit? Aby se to povedlo, musíš přidat postavě jinak barevné kalhoty (na _všech_ kostýmecch)...
 
 ![screenshot](dodge-trousers.png)
 
-...and then replace the code: 
+...a pak nahraď kód: 
 
 ```blocks
-	< touching color [#0000FF]? >
+	< dotýka se barvy [#0000FF]? >
 ```
 
-with:
+tímto:
 
 ```blocks
-	< color [#00FF00] is touching [#0000FF]? >
+	< barva [#00FF00] je na barvě [#0000FF]? >
 ```
 
-Remember to test your improvements to make sure you've fixed the bug!
+Nezapomeň toto vylepšení otestovat!
 
 ## Ulož projekt { .save }
 
-## Výzva: More lives {.challenge}
-Can you give your player 3 `lives` {.blockdata}, instead of just sending them back to the beginning each time? Here's how your game could work:
+## Výzva: Více životů {.challenge}
+Dej hráči 3 `životy` {.blockdata} místo toho, abys ho posílal vždy jen na začátek. Tady je příklad, jak by to mohlo vypadat:
 
-+ Your player starts with 3 lives;
-+ Whenever your player gets hit, one life is lost and they go back to the start;
-+ If there are no lives left, the game ends.
++ Hráč začne se třemi životy;
++ Kdykoliv dostane zásah, tak ho pošli na začátek a uber život;
++ Když mu nezbudou životy, hra končí.
 
 ## Ulož projekt { .save }

@@ -152,123 +152,123 @@ Pojď upravit tvoji postavičku tak, aby byla více realistická přidáním gra
 
 ## Ulož projekt { .save }
 
-## Výzva: Improved jumping {.challenge}
-Postava může vyskočit, kdykoliv je stiknut mezerník, i když je ve vzduchu. Vyzkoušej to tak, že během pádu z plošiny podržíš mezerník. Múžeš to opravit tak, že postava může skákat jen `když` {.blockcontrol} se dotýka plošiny?
+## Výzva: Vylepšené skákáni {.challenge}
+Postava může vyskočit, kdykoliv je stisknut mezerník, i když je ve vzduchu. Vyzkoušej to tak, že během pádu z plošiny podržíš mezerník. Múžeš to opravit tak, že postava může skákat jen `když` {.blockcontrol} se dotýka plošiny?
 
 ## Ulož projekt { .save }
 
 # Krok 3: Uhýbání balónům { .activity .new-page}
 
-Now that you've got your character moving around, let's add some balls for your character to avoid.
+Nyní, když máš postavu, která se pohybuje, přidej nějaké balóny, kterým se bude vyhýbat.
 
 ## Seznam úkolů { .check }
 
-+ Create a new ball sprite. You can choose any type of ball you like.
++ Přidej nový objekt pro balón, vyber jakýkoliv se ti bude líbit..
 
 	![screenshot](dodge-balls.png)
 
-+ Resize your ball, so that your character can jump over it. Try jumping over the ball to test it. 
++ Změn velikost tak, aby byla tvoje postava schopná ho přeskočit. Zkus ho přeskočit, abys to vyzkoušel(a). 
 
 	![screenshot](dodge-ball-resize.png)
 
-+ Add this code to your ball:
++ Přidej k balónu následující kód:
 
 	![screenshot](dodge-ball-motion.png)
 
-	This code creates a new ball clone every 3 seconds. Each new clone moves along the top platform.
+	Tento kód vytvoří kopii balónu každé tři vteřiny. Každý klon přesune na horní plošinu.
 
-+ Click the flag to test this out.
++ Klikni na vlajku a vyzkoušej to.
 
 	![screenshot](dodge-ball-test.png)
 
-+ Add more code to your ball sprite, so that they move across all 3 platforms.
++ Přidej k balónu více kódu, aby se pohyboval přes všechny plošiny.
 
 	![screenshot](dodge-ball-more-motion.png)
 
-+ Finally, you'll need code for when your character gets hit by a ball! Add this code to your ball sprite:
++ Nakonec budeš potřebovat kód, když balón trefí postavu! Přidej k balónu tento kód:
 
 	```blocks
-		when I start as a clone
-		forever
-			if < touching [Pico walking v]? > then
-				broadcast [hit v]
+		když startuji jako klon
+		opakuj dokola
+			když < dotýká se [Pico walking v]? > tak
+				rozešli všem [hit v]
 			end
 		end
 	```
 
-+ You'll also need to add code to your character, to move back to the start when they're hit:
++ Ke postavě musíš přidat kód, který ji přesune po zásahu balónem na začátek:
 
 	```blocks
-		when I receive [hit v]
-		point in direction (90 v)
-		go to x: (-210) y: (-120)
+		po obdržení zprávy [hit v]
+		natoč se směrem (90 v)
+		skoč na pozici x: (-210) y: (-120)
 	```	
 
-+ Test out your character and see if they go back to the start when they've been hit by a ball.
++ Otestuj postavičku a vyzkoušej jestli se po zásahu balónem dostane zpět na začátek.
 
 ## Ulož projekt { .save }
 
-## Výzva: Random balls {.challenge}
-The balls your character has to dodge all look the same, and always appear every 3 seconds. Can you improve them, so that they:
+## Výzva: Náhodné balóny {.challenge}
+Balóny, kterým se tvoje postava vyhýbá jsou stále stejné a objevují se vždy po 3 vteřinách. Může vylepšit hru tak, aby:
 
-+ don't all look the same?
-+ appear after a random amount of time?
-+ are a random size?
++ nevypadaly vždy stejně?
++ objevovaly se po náhodném čase?
++ měly různou velikost?
 
 ![screenshot](dodge-ball-random.png)
 
 ## Ulož projekt { .save }
 
-# Krok 4: Lasers! { .activity .new-page}
+# Krok 4: Lejzry! { .activity .new-page}
 
-Let's make your game a little harder to complete, by adding lasers!
+Udělejme hru těžší přidáním lejzrů!
 
 ## Seznam úkolů { .check }
 
-+ Add a new sprite to your game, called 'Laser'. It should have 2 costumes, called 'on' and 'off'.
++ Přidej nový objekt a nazvi ho 'Laser'. Musí mít dva kostýmy nazvané 'on' a 'off'.
 
 	![screenshot](dodge-lasers-costume.png)
 
-+ Place your new laser anywhere you like, between 2 platforms.
++ Umísti lejzr kamkoliv chceš mezi dvě plošiny.
 
 	![screenshot](dodge-lasers-position.png)
 
-+ Add code to your laser, to make it switch between the 2 costumes.
++ Přidej k laseru kód, který bude kostýmy přepínat.
 
 	```blocks
 		po kliknutí na ⚑
-		forever
-			switch costume to [on v]
-			wait (2) secs
-			switch costume to [off v]
-			wait (2) secs
+		opakuj dokola
+			změň kostým na [on v]
+			čekej (2) sekund
+			změň kostým na [off v]
+			čekej (2) sekund
 		end
 	```
 
-	If you prefer, you can `wait` {.blockcontrol} a `random` {.blockoperators} amount of time between costume changes.
+	Pokud chceš, můžeš `čekat` {.blockcontrol} `náhodné` {.blockoperators} množství času, mezi změnami kostýmu.
 
-+ Finally, add code to your laser, so that the 'hit' message is broadcast when the laser touches your character. This code will be the same as the code you added to your ball sprite.
++ Nakonec přidej lejzru kód, která pošle zprávu 'hit', když zasáhne hráče. Toto bude stejný kód, jako je u balónu.
 
-	You don't need to add any more code to your character - they already know what to do when they get hit!
+	K postavě není třeba dávat žádný kód, ta už ví, jak se chovat, když je zasažena!
 
-+ Test out your game to see if you can get past the laser. Change the `wait` {.blockcontrol} times in your code if the lasers are too easy or too hard.
++ Vyzkoušej hru, jestli se dá dostat skrz lejzr. Změn blok `čekej` {.blockcontrol} pokud je průchod moc těžký nebo lehký.
 
-## Výzva: More obstacles {.challenge}
-If you think your game is still too easy, you can add more obstacles to your level. You can add anything you like, but here are some ideas:
+## Výzva: Více překážek {.challenge}
+Pokud si myslíš, že je hra moc jednoduchá, přidej více překážek. Přidej cokoliv chceš, ale zde je pár nápadů:
 
-+ A flying killer butterfly;
-+ Platforms that appear and disappear;
-+ Falling tennis balls that must be avoided.
++ Lítající nebezpečný motýl;
++ Plošina, která se objevuje a mizí;
++ Padající tenisový míček, kterému se musíš vyhnut.
 
 ![screenshot](dodge-obstacles.png)
 
-You could even create more than one backdrop, and move to the next level when your character reaches the brown door:
+Navíc múžeš vytvořit více pozadí a přesunout hráče do další úrovně, když se dostane ke dveřím:
 
 ```blocks
-	if <touching color [#714300]?> then
-		switch backdrop to [next backdrop v]
-		go to x: (-210) y: (-120)
-		wait (1) secs
+	když <dotýká se barvy [#714300]?> tak
+		změň pozadí na [další pozadí v]
+		skoč na pozici x: (-210) y: (-120)
+		čekej (1) sekund
 	end
 ```
 

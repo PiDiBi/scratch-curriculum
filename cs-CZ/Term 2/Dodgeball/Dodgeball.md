@@ -50,7 +50,6 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 	```
     
     ```blocks
-		when flag clicked
         po kliknutí na ⚑
 		forever
 			if <key [right arrow v] pressed? > then

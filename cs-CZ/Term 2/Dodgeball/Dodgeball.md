@@ -124,7 +124,7 @@ Pojď upravit tvoji postavičku tak, aby byla více realistická přidáním gra
 
 	```blocks
 		po stisku klávesy [mezerník v]
-		opakuj (10)
+		opakuj (10) krát
 			změň y o (4)
 		end
 	```

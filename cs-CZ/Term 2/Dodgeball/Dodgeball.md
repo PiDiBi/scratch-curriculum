@@ -58,7 +58,7 @@ Začni vytvořením postavy, které se může pohybovat doleva a doprava a lézt
 				move (3) steps
 				next costume
 			end
-		
+	```		
 
 + Otestuj postavu kliknutím na zelenou vlakku a tak, že podržíš šipku doprava. Pohybuje se doprava a vypadá to jako že chodí?
 
